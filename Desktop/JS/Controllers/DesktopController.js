@@ -15,7 +15,7 @@ export class DesktopController{
     }
 
     onStartCLick = () => {
-        this.view.startButton()
+        this.view.StartMenu()
         this.view.AddApplicationListToSTartWindow(this.model.apllications);
     }
 
