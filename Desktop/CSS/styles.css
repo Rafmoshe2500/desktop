@@ -1,0 +1,121 @@
+html {
+    height: 100%;
+}
+body {
+    background-image: url("../Pictures/desktop.png");
+    height: 100%;
+    margin: 0;
+}
+
+div {
+    display: flex;
+}
+
+#desktop {
+    bottom: 5.5%;
+    height: 94.5%;
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.desktopIcon {
+    text-align: center;
+    flex-direction: column;
+    margin: 5px;
+    padding: 5px;
+    height: 60px;
+    width: 50px;
+}
+
+.imgDesktopIcon {
+    height: inherit;
+    width: inherit;
+}
+
+.desktopIcon:hover {
+    background-color: rgba(255,251,240,0.12);
+    color: white;
+}
+
+.taskBar {
+    background-color: rgba(2,2,5,0.76);
+    bottom: 0;
+    height: 5.5%;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    justify-content: space-between;
+    display: flex;
+}
+
+#rightTaskBar {
+    width: 50%;
+    justify-content: flex-end;
+    display: flex;
+}
+
+#leftTaskBar {
+    width: 50%;
+    justify-content: flex-start;
+    display: flex;
+}
+
+#datePosition {
+    width: 15%;
+    height: 100%;
+}
+
+#start {
+    font-family: "Comic Sans MS";
+    font-size: x-large;
+    width: 15%;
+}
+
+#startWindow {
+    bottom: 5.5%;
+    width: 30%;
+    left: 0;
+    height: 70%;
+    background-color: rgba(2,2,5,0.51);
+    position: fixed;
+    flex-direction: column;
+}
+
+.startWindowApplications {
+    height: 8%;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 4%;
+    width: 96%;
+    color: white;
+    font-family: "Comic Sans MS";
+    font-size: large;
+}
+
+.startWindowApplications:hover {
+    background-color: rgba(119,165,186,0.25);
+}
+
+.position {
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.taskBarIcon:hover {
+    background-color: rgba(10,10,26,0.54);
+}
+
+.small {
+    font-size: small;
+}
+
+p {
+    margin: 0;
+}
+
+.white {
+    color: white;
+}
