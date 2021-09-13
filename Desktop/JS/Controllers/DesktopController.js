@@ -35,7 +35,7 @@ export class DesktopController{
                 this.view.CloseApplication(app);
                 break;
             case 'resize':
-                this.view.GetFullScreen(app, button);
+                this.view.GetFullOrNormalScreen(app, button);
                 break;
             case 'minus':
                 this.view.MinusTheApplication(app)

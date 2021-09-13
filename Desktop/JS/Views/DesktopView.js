@@ -85,7 +85,7 @@ export class DesktopView {
         })
     }
 
-    GetFullScreen(app, button){
+    GetFullOrNormalScreen(app, button){
         let top = app.firstChild;
         let data = app.lastChild;
         if(button.innerHTML === '+'){
