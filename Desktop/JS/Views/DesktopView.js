@@ -1,14 +1,15 @@
-import {dragElement} from "./dragElement.js";
-
 export class DesktopView {
-    constructor() {
+    constructor(applications) {
+
+        this.applications = applications;
+
         this.date = document.getElementById("date");
         this.time = document.getElementById("time");
         this.start = document.getElementById("start");
         this.startWindow = document.getElementById("startWindow");
         this.startWindow.style.visibility = 'hidden';
-        this.notepad = document.getElementById('notepad');
         this.calculator = document.getElementById('calculator');
+        this.desktop = document.getElementById('desktop');
         this.InitIcons();
     }
 
@@ -20,34 +21,7 @@ export class DesktopView {
     }
 
     CloseApplication(app){
-        let desktop = document.getElementById('desktop');
-        desktop.removeChild(app);
-    }
-
-    AddNotepadToView(){
-        let desktop = document.getElementById('desktop');
-        let notepadWindow = document.createElement('div');
-        notepadWindow.id = 'notepad';
-        notepadWindow.style.width = '500px';
-        notepadWindow.originalWidth = '500px';
-        notepadWindow.style.height = '500px';
-        notepadWindow.originalHeight = '500px';
-        notepadWindow.style.padding = '0';
-        notepadWindow.style.border = '1px black solid';
-        notepadWindow.style.flexDirection = 'column';
-        notepadWindow.style.position = 'absolute';
-        let textArea = document.createElement('textarea');
-        textArea.style.width = 'inherit';
-        textArea.style.height = 'inherit';
-        textArea.style.border = '0';
-        textArea.style.padding = '0';
-        textArea.style.margin = '0';
-        textArea.style.resize = 'none';
-
-        this.BuildTopBarOfApplication(notepadWindow);
-        notepadWindow.appendChild(textArea);
-        desktop.appendChild(notepadWindow);
-        dragElement(notepadWindow);
+        this.desktop.removeChild(app);
     }
 
     BuildTopBarOfApplication(app){
@@ -74,7 +48,7 @@ export class DesktopView {
         top.appendChild(XButton);
         top.appendChild(MinusButton);
         top.appendChild(ResizeButton);
-        app.appendChild(top);
+        app.appendChild(top)
     }
 
     StartMenu() {
@@ -87,20 +61,6 @@ export class DesktopView {
         }else{
             startWindow.style.visibility = 'hidden';
         }
-    }
-
-    OpenNotepadFromDesktop(open){
-        this.notepad.addEventListener('dblclick', () => {
-            open();
-        });
-    }
-
-    OpenNotepadFromStartMenu(open){
-        const notepad = document.getElementById('notepadStartWindows')
-        notepad.addEventListener('click', () => {
-            open();
-            this.startWindow.style.visibility = 'hidden';
-        });
     }
 
     ClickOnApplicationButton(onClickButton){

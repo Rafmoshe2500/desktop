@@ -1,3 +1,5 @@
+import {dragElement} from "../Views/dragElement.js";
+
 export class DesktopController{
     constructor(view, model) {
         this.view = view;
@@ -5,8 +7,8 @@ export class DesktopController{
         this.onLoad();
         setInterval(this.view.getRealTime, 1000);
         this.onStartCLick();
-        this.view.OpenNotepadFromDesktop(this.onOpenNotepad);
-        this.view.OpenNotepadFromStartMenu(this.onOpenNotepad);
+        this.view.applications['notepad'].OpenNotepadFromDesktop(this.onOpenNotepad);
+        this.view.applications['notepad'].OpenNotepadFromStartMenu(this.onOpenNotepad);
     }
 
     onLoad(){
@@ -20,7 +22,9 @@ export class DesktopController{
     }
 
     onOpenNotepad = () => {
-        this.view.AddNotepadToView();
+        let notepad = this.view.applications['notepad'].AddNotepadToView();
+        this.view.BuildTopBarOfApplication(notepad);
+        dragElement(notepad);
         this.view.ClickOnApplicationButton(this.StrategyClickedButton);
     }
 
